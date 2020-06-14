@@ -1,0 +1,204 @@
+*{ 
+  margin:0px; padding:0px; 
+}
+
+@font-face {
+    font-family: "forgetmenot";
+    src: url('forgetmenot.ttf') ;      
+}
+@font-face {
+    font-family: "romantic";
+    src: url('Agatha.ttf') ;      
+}
+body{
+    background : url('amour.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: helvetica;
+
+}
+
+
+header{
+    font-family: 'forgetmenot';
+    max-height: 150px;
+    margin : 0px auto 10px auto;
+    color :black;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: flex-end;
+    font-size : 30px;
+}
+
+main{
+    max-width: 1100px;
+    max-height : 600px;
+    margin : 80px auto;
+    margin-top: 0px;
+    text-align: justify;
+    padding : 50px;
+    padding-top: 25px;
+    color :black;
+    border-top :2px solid gold;
+}
+
+.amour{
+    text-align: center;
+    
+    padding : 100px;
+    font-family: 'romantic';
+    font-size: 100px;
+    animation: fadein 10s;
+    -webkit-animation: fadein 10s; /* Safari et Chrome */
+
+}
+
+.phrase2{
+    font-size: 70px;
+ }
+
+@-webkit-keyframes fadein { 
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+
+/*boutons*/
+nav ul{
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    border-bottom :fixed;
+    background-color : none;
+
+}
+
+nav li{
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+nav a{
+    
+    font-weight: lighter;
+    font-size: 25px;
+    text-decoration: none;
+    color :black;
+}
+nav a::after  {
+
+    content:'';
+    display: block;
+    width:0;
+    height :2px;
+    background: gold;
+    
+    transition:width .3s;
+}
+
+
+nav a:hover::after {
+    width: 100%;
+    transition:width .3s;
+    
+}
+
+.boutonmenuprincipal {
+border: none;
+cursor: pointer;
+}
+
+.descendants-petits {
+display: none;
+box-shadow: 0px 1px 2px #CCC;
+background: rgba(211,211,211,0.7);
+position: absolute;
+background: white;
+padding: 10px;
+
+
+}
+.descendants-petits a {
+display: block;
+font-size : 20px;
+}
+
+.descendants:hover .descendants-petits {
+display: block;
+}
+
+
+/*footer*/
+footer{
+    position : scroll;
+    background-color : rgba(211,211,211,1);
+    height :30px;
+    color : black;
+    padding: 30px;
+    margin :0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+    font-size : 18px;
+    font-family: Helvetica;
+}
+.reseaux{
+    display :flex;
+    align-items: right;
+    justify-content: right;
+
+}
+.social{
+    position: relative;
+    background-color: rgba(211,211,211,1);
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.social img{
+    z-index: 2;
+    width: 30px;
+    height :30px;
+}
+
+.fond_twi, .fond_face, .fond_insta{
+    top :-40px;
+    z-index: 1;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    transition: 0.5s;
+}
+.fond_twi{
+    background-color: #55acee; /*couleur bleu de twitter*/
+}
+.fond_face{
+    background-color: #3b5999; /*couleur bleu de facebook*/
+}
+.fond_insta{
+    background-color: #FD1D1D; /*couleur de insta*/
+}
+.social:hover .fond_twi{
+    top :0;
+}
+.social:hover .fond_face{
+    top :0;
+}
+.social:hover .fond_insta{
+    top :0;
+}

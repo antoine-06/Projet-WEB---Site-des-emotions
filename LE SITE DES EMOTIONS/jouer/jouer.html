@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel = "stylesheet" href = "jouer.css">
+        <title>Site des émotions - A vous de jouer</title>
+        <script type="text/javascript" src="jouer.js"></script>
+        <link rel="shortcut icon" href="../Style/icone.ico">
+    </head>
+
+    <body >
+    	<header>
+            <div class="titre_principal">
+                <div class="content">
+                    <h1> Le site des émotions </h1>    
+                </div>
+                <h3>A vous de jouer !</h3>
+            </div>    
+    	</header>
+    	<nav>
+            <ul>
+                <li><a href="../Home.html">Accueil</a></li>
+                <div class = "descendants">
+                    <li><a class ="boutonmenuprincipal">Emotions</a></li>
+                    <div class="descendants-petits">
+
+                        <a href="../etonnenment\etonnement.html">L'étonnement </a>
+                        <a href="../Le_stress.html">Le stress </a>
+                        <a href="#">La frustation </a> 
+                        <a href="../faim\La_faim.html">La faim </a>
+                        <a href="../Lennui.html">L'ennui </a>
+                    </div>
+                </div>
+                <li><a href="../credits.html">Crédits</a></li>
+            </ul>
+        </nav>
+
+        <main>
+        	<div class="questionnaire_conteneur">						
+			
+				<div class="Titre_questions">
+					<h1>Questionnaire à choix multiples - Si vous bloquez, allez faire un tour sur la page de l'étonnement.
+					Lorsque vous serez prêt cliquez sur le bouton "debuter"</h1>
+				</div>
+				
+				<div class="div_saut_ligne"></div>		
+			
+				<div class ="conteneur_total">		
+					<div class ="sous-total">			
+						<div class="conteneur_question">
+							<div class="Question_qcm" id="question"></div>	
+						</div>
+
+						<div class="questioncol" id="liste">
+							<div class="Boite_rep" id="rep1" onClick='valider(1)'></div>
+							<div class="Boite_rep" id="rep2" onClick='valider(2)'></div>
+							<div class="Boite_rep" id="rep3" onClick='valider(3)'></div>
+							<div class="Boite_rep" id="rep4" onClick='valider(4)'></div>
+						</div>
+				
+						<div class="conteneur_question">
+							<div class="Question_qcm" id="apercu"> 
+								<input type="button" value="debuter" onClick="debuter();" />
+								<div id="stats" class ="total_resultats">
+									<div class ="resultats" >Nombre bonnes réponses :&nbsp;</div>
+									<div class ="resultats" id="score" >0</div>
+									<div class ="resultats" >, Questions restantes :&nbsp;</div>
+									<div class ="resultats" id="restant" >0</div>
+								</div>
+							</div>	
+						</div>					
+					</div>
+				</div>
+			</div>
+
+        </main>
+
+        <footer>
+            <h3>Le site des émotions</h3>
+            <h4>Site créé pour projet WEB L2 EFREI-PARIS </h4>
+            <h4>Pour plus d'infos visiter la page crédits</h4>
+            <div class="reseaux">
+                <a href="https://twitter.com/explore" class="social"><img src="../Style/twitter.png" alt="twitter_img" /><div class="fond_twi"></div></a>
+                <a href="https://www.facebook.com/" class="social"><img src="../Style/facebook.png" alt="facebook_img" /><div class="fond_face"></div></a>
+                <a href="https://www.instagram.com/" class="social"><img src="../Style/instagram.png" alt="instagram_img" /><div class="fond_insta"></div></a>
+            </div>
+            
+
+        </footer>
+    </body>
+    <script>
+
+	var bonne_rep = 0; 
+	var nb_questions = 10;
+	var nb_erreurs = 0; 
+	var mem_nb_alea='';
+	var jouer=false;
+
+	function debuter(){
+		jouer = true;
+		bonne_rep = 0; 
+		nb_questions = 10;
+		nb_bonne_rep = 0;
+		mem_nb_alea='';
+		init();
+		suivant();
+	}
+
+	function init(){
+		document.getElementById('restant').innerText = nb_questions;
+		document.getElementById('score').innerText = 0+nb_bonne_rep;
+	}
+
+	function valider(num_rep){
+
+	if(jouer==false)
+		return;
+
+	if(num_rep == bonne_rep)
+		nb_bonne_rep++;
+		nb_questions--;
+
+	if(nb_questions==0)
+		jouer=false;
+		init();
+		suivant();
+	}
+
+	function suivant(){
+
+		var position; 
+		var test=true; 
+		var nb_alea=0;
+		if(jouer==false)
+			return;
+
+		while (test==true){
+			nb_alea = Math.floor(Math.random()*10) + 1;
+			if(mem_nb_alea.indexOf('-' + nb_alea + '-')>-1)
+				nb_alea = Math.floor(Math.random()*10) + 1;
+			else{
+				test=false;
+				mem_nb_alea += '-' + nb_alea + '-';
+			}
+		}
+
+		var chaine_question = questions(nb_alea);
+
+		var tab_question = chaine_question.split('*');
+		console.log (tab_question);
+		document.getElementById('question').innerText = tab_question[0];
+
+		for (position=1;position<=4;position++){
+			document.getElementById('rep' + position).innerText = tab_question[position];
+		}
+
+		bonne_rep = tab_question[5];
+
+	}
+	</script>
+</html>

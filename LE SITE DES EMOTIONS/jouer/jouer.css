@@ -1,0 +1,302 @@
+*{ 
+  margin:0px; padding:0px; 
+}
+
+body{
+    background: url('bckg.jpg')no-repeat center center fixed;
+    background-size: cover;
+    font-family: helvetica;
+}
+
+header{
+    margin : 0px auto 10px auto;
+    color :black;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: flex-end;
+    font-size : 50px;
+    font-family: helvetica;
+    text-align: center;
+}
+
+/* mise en page du QCM */
+
+input{
+	width:150px;
+	height:30px;
+	margin-left: -20%;
+	border :2px solid rgba(58, 242, 75);
+    border-radius: 4px;
+	padding-left:5px;
+	font-size:20px;
+	color:black;
+	background-color: rgba(58, 242, 75, 0);
+	text-align: center;
+	transition-duration: 0.4s;
+ }
+input[type="button"]:hover
+{
+	cursor:pointer;
+	background-color: rgba(58, 242, 75, 0.2);
+  	color: white;
+}
+
+
+.Titre_questions
+{
+	margin-left: 20%;
+	margin-right: 20%;
+	width:auto;
+	display:block;
+	height:auto;
+	text-align:center;
+	background-color:none;
+	border-top : 2px solid gold;
+	padding-top:12px;
+	color:black;	
+}
+
+
+.resultats{
+	float:left;
+
+}
+.total_resultats{
+	float:right;
+	padding-right:15px;
+}
+.questioncol
+{
+	width:720px;
+	float:left;
+	height:auto;
+	text-align:center;
+	border:#333 1px solid;
+	border-radius: 4px;	
+	color:#66666;
+	font-weight:bold;
+	font-size:20px;
+	padding-top:16px;
+	padding-bottom:10px;
+	margin-bottom:20px;
+	margin-left:40px;
+}
+
+.Boite_rep
+{
+	width:295px;
+	margin:30px;
+	padding-top:25px;
+	float:left;
+	height:50px;
+	text-align:center;
+	border-radius: 4px;	
+	background-color:rgba(186, 186, 186, 0.2);
+	border:black 1px solid;
+	font-size:20px;
+	color: black;
+	transition-duration: 0.4s;
+
+}
+
+.Boite_rep:hover
+{
+	cursor:pointer;
+	background-color: #4CAF50;
+  	color: white;
+  	border:white 1px solid;
+}
+.conteneur_total{
+	width:100%;
+	height:auto;
+	text-align:center;
+}
+.sous-total{
+	width:800px;
+	display:inline-block;
+}
+.Question_qcm
+{
+	margin-top: 50px;
+	width:720px;
+	float:left;
+	height:30px;
+	text-align:center;
+	border:black 1px solid;
+	border-radius: 4px;	
+    background-color:rgba(186, 186, 186, 0.2);
+	color:black;
+	font-size:18px;
+	padding-top:16px;
+	padding-bottom:10px;
+	margin-bottom:20px;
+	margin-left:40px;
+}
+
+.conteneur_question
+{
+
+	width:800px;
+	float:left;
+	text-align:center;
+}
+
+.div_conteneur_parent
+{
+	width:100%;
+	height:auto;
+	text-align:center;
+}
+
+
+.questionnaire_conteneur
+{
+	width:100%;
+	float:left;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom:15px;
+	padding-top:5px;
+	height:auto;
+	font-size:14px;
+	font-family:Calibri;
+	color:#666666;
+	text-align:left;
+}
+
+
+
+
+/*Barre de navigation et footer : le meme principe css dans toutes les pages */
+
+nav ul{
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    border-bottom :fixed;
+    background-color : none;
+
+}
+
+nav li{
+    margin-right: 30px;
+}
+
+nav a{
+    
+    font-weight: lighter;
+    font-size: 25px;
+    text-decoration: none;
+    color :black;
+}
+nav a::after  {
+
+    content:'';
+    display: block;
+    width:0;
+    height :2px;
+    background: gold;
+    
+    transition:width .3s;
+}
+
+
+nav a:hover::after {
+    width: 100%;
+    transition:width .3s;
+    
+}
+
+.boutonmenuprincipal {
+border: none;
+cursor: pointer;
+}
+
+.descendants-petits {
+display: none;
+box-shadow: 0px 1px 2px #CCC;
+position: absolute;
+background: white;
+padding: 10px;
+
+
+}
+.descendants-petits a {
+display: block;
+font-size : 20px;
+}
+
+.descendants:hover .descendants-petits {
+display: block;
+}
+
+footer{
+    position : scroll;
+    background-color : rgba(211,211,211,1);
+    height :30px;
+    color : black;
+    padding: 30px;
+    margin :0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+    font-size : 18px;
+    font-family: Helvetica;
+}
+.reseaux{
+    display :flex;
+    align-items: right;
+    justify-content: right;
+
+}
+.social{
+    position: relative;
+    background-color: rgba(211,211,211,1);
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.social img{
+    z-index: 2;
+    width: 30px;
+    height :30px;
+}
+
+.fond_twi, .fond_face, .fond_insta{
+    top :-40px;
+    z-index: 1;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    transition: 0.5s;
+}
+.fond_twi{
+    background-color: #55acee; /*couleur bleu de twitter*/
+}
+.fond_face{
+    background-color: #3b5999; /*couleur bleu de facebook*/
+}
+.fond_insta{
+    background-color: #FD1D1D; /*couleur de insta*/
+}
+.social:hover .fond_twi{
+    top :0;
+}
+.social:hover .fond_face{
+    top :0;
+}
+.social:hover .fond_insta{
+    top :0;
+}

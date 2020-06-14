@@ -1,0 +1,182 @@
+body, html, header, h1{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: helvetica;
+
+}
+
+body, html, header{ /* il prend automatiquement la hauteru de toute la page*/
+    width: 100%;
+    height: 100%;
+}
+
+
+header{
+    background : url('backgroung.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color :white;
+}
+
+.wrapper{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.content{
+    display :table-cell;
+    text-align:center;
+    vertical-align: middle;
+    text-shadow: 1px 1px 10px black;
+}
+h1{
+    font-size: 65px;
+}
+.subtitle{
+    font-size : 35px;
+}
+
+main{
+    max-width: 900px;
+    margin : 80px auto;
+    text-align: justify;
+}
+nav{
+    max-width: 900px;
+    margin : 30px auto;
+    text-align: justify;
+}
+
+
+/* boutons */
+nav ul{
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    border-bottom :2px solid gold;
+    border-bottom :fixed;
+
+}
+
+nav li{
+    margin-right: 30px;
+    margin-bottom: 20px
+}
+
+nav a{
+    
+    font-weight: lighter;
+    font-size: 25px;
+    text-decoration: none;
+    color :black;
+}
+nav a::after  {
+
+    content:'';
+    display: block;
+    width:0;
+    height :2px;
+    background: gold;
+    
+    transition:width .3s;
+}
+
+
+nav a:hover::after {
+    width: 100%;
+    transition:width .3s;
+    
+}
+
+.boutonmenuprincipal {
+border: none;
+cursor: pointer;
+}
+
+.descendants-petits {
+display: none;
+box-shadow: 0px 1px 2px #CCC;
+position: absolute;
+background: white;
+padding: 10px;
+
+
+}
+.descendants-petits a {
+display: block;
+font-size : 20px;
+}
+
+.descendants:hover .descendants-petits {
+display: block;
+}
+
+
+
+/*footer*/
+footer{
+    background : lightgrey;
+    height :50px;
+    color :white;
+    padding: 30px;
+    margin :0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.reseaux{
+    display :flex;
+    align-items: right;
+    justify-content: right;
+
+}
+.social{
+    position: relative;
+    background-color: rgba(0,0,0,0.2);
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.social img{
+    z-index: 2;
+    width: 30px;
+    height :30px;
+}
+
+.fond_twi, .fond_face, .fond_insta{
+    top :-40px;
+    z-index: 1;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    transition: 0.5s;
+}
+.fond_twi{
+    background-color: #55acee; /*couleur bleu de twitter*/
+}
+.fond_face{
+    background-color: #3b5999; /*couleur bleu de facebook*/
+}
+.fond_insta{
+    background-color: #FD1D1D; /*couleur de insta*/
+}
+.social:hover .fond_twi{
+    top :0;
+}
+.social:hover .fond_face{
+    top :0;
+}
+.social:hover .fond_insta{
+    top :0;
+}
